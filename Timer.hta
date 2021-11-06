@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Timer</title><hta:application id="frmMain" singleInstance="yes" 
+showInTaskbar="yes" contextmenu="no" maximizeButton="no" minimizeButton="no" border="thin"/>
+</head>
+<SCRIPT Language = "VBScript">
+    Dim idTimer
+
+    Sub Window_Onload
+        idTimer = window.setTimeout("Launch", 5000, "VBScript")
+    End Sub
+
+    Sub Launch
+        window.clearTimeout(idTimer)
+        Msgbox "Launching ..."
+    End Sub
+
+    Sub Abortz
+        window.clearTimeout(idTimer)
+        Msgbox "Launch aborted."
+    End Sub
+</SCRIPT>
+
+
+<BODY>
+    <input type="button" value="Startz" onClick="Launch">
+    <input type="button" value="Cancel" onClick="Abortz">
+</BODY>
+</HTML>
